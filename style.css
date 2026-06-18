@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>词汇含义网站</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>词汇含义网站</h1>
+
+  <input 
+    id="searchInput" 
+    type="text" 
+    placeholder="输入单词或含义进行搜索"
+  >
+
+  <div id="wordList"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
