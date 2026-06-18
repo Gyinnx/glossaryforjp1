@@ -5,21 +5,26 @@ body {
   padding: 0 20px;
   line-height: 1.7;
   background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 24px;
+  font-size: 36px;
 }
 
 input {
   width: 100%;
-  padding: 12px;
+  padding: 14px 16px;
   font-size: 16px;
   margin-bottom: 24px;
-  box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .card {
@@ -27,17 +32,20 @@ input {
   border: 1px solid #ddd;
   padding: 16px;
   margin-bottom: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .word {
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  word-break: break-word;
 }
 
 .meaning {
   margin-top: 8px;
+  font-size: 16px;
+  word-break: break-word;
 }
 
 .highlight {
@@ -45,4 +53,58 @@ input {
   background-color: #fff1e8;
   border-radius: 4px;
   padding: 0 2px;
+}
+
+/* 手机端界面 */
+@media (max-width: 600px) {
+  body {
+    max-width: none;
+    margin: 20px auto;
+    padding: 0 14px;
+    line-height: 1.6;
+  }
+ h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 13px 14px;
+    margin-bottom: 20px;
+    border-radius: 9px;
+  }
+
+  .card {
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+
+  .word {
+    font-size: 20px;
+  }
+
+  .meaning {
+    font-size: 15px;
+  }
+}
+
+/* 更小的手机 */
+@media (max-width: 380px) {
+  body {
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .word {
+    font-size: 19px;
+  }
+
+  .meaning {
+    font-size: 14px;
+  }
 }
