@@ -53,10 +53,6 @@ function displayWords(list) {
     word.className = "word";
     word.textContent = item.word;
 
-    const language = document.createElement("div");
-    language.className = "language";
-    language.textContent = "言語：" + item.language;
-
     const meaning = document.createElement("div");
     meaning.className = "meaning";
     meaning.textContent = "意味：" + item.meaning;
