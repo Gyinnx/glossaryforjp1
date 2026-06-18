@@ -27,7 +27,6 @@ searchInput.addEventListener("input", () => {
   const filteredWords = words.filter(item => {
     return (
       item.word.toLowerCase().includes(keyword) ||
-      item.language.toLowerCase().includes(keyword) ||
       item.meaning.toLowerCase().includes(keyword)
     );
   });
@@ -58,7 +57,6 @@ function displayWords(list) {
     meaning.textContent = "意味：" + item.meaning;
 
     card.appendChild(word);
-    card.appendChild(language);
     card.appendChild(meaning);
 
     wordList.appendChild(card);
