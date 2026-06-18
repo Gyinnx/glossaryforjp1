@@ -39,3 +39,10 @@ input {
 .meaning {
   margin-top: 8px;
 }
+
+.highlight {
+  border: 2px solid orangered;
+  background-color: #fff1e8;
+  border-radius: 4px;
+  padding: 0 2px;
+}
