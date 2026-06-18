@@ -1,29 +1,28 @@
-const words = [
-  {
-    word: "ischemia",
-    language: "English",
-    meaning: "虚血。血液供給が不足している状態。"
-  },
-  {
-    word: "有意差",
-    language: "Japanese",
-    meaning: "統計的に偶然とは考えにくい差。"
-  },
-  {
-    word: "API",
-    language: "English",
-    meaning: "アプリやサービス同士が情報をやり取りするための仕組み。"
-  }
-];
+let words = [];
 
 const searchInput = document.getElementById("searchInput");
 const wordList = document.getElementById("wordList");
 
-// 页面刚打开时，显示所有单词
-displayWords(words);
+fetch("words.json")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("words.json を読み込めませんでした。");
+    }
+    return response.json();
+  })
+  .then(data => {
+    words = data;
+
+    // 最初はすべての単語を表示する
+    displayWords(words);
+  })
+  .catch(error => {
+    console.error("単語データの読み込みに失敗しました：", error);
+    wordList.textContent = "単語データを読み込めませんでした。words.json を確認してください。";
+  });
 
 searchInput.addEventListener("input", () => {
-  const keyword = searchInput.value.toLowerCase();
+  const keyword = searchInput.value.trim().toLowerCase();
 
   const filteredWords = words.filter(item => {
     return (
@@ -40,7 +39,9 @@ function displayWords(list) {
   wordList.innerHTML = "";
 
   if (list.length === 0) {
-    wordList.innerHTML = "<p>没有找到匹配的词汇。</p>";
+    const message = document.createElement("p");
+    message.textContent = "一致する単語が見つかりませんでした。";
+    wordList.appendChild(message);
     return;
   }
 
@@ -48,11 +49,21 @@ function displayWords(list) {
     const card = document.createElement("div");
     card.className = "card";
 
-    card.innerHTML = `
-      <div class="word">${item.word}</div>
-      <div class="language">语言：${item.language}</div>
-      <div class="meaning">含义：${item.meaning}</div>
-    `;
+    const word = document.createElement("div");
+    word.className = "word";
+    word.textContent = item.word;
+
+    const language = document.createElement("div");
+    language.className = "language";
+    language.textContent = "言語：" + item.language;
+
+    const meaning = document.createElement("div");
+    meaning.className = "meaning";
+    meaning.textContent = "意味：" + item.meaning;
+
+    card.appendChild(word);
+    card.appendChild(language);
+    card.appendChild(meaning);
 
     wordList.appendChild(card);
   });
