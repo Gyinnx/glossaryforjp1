@@ -1,66 +1,66 @@
 [
-  {
-    "word": "ADC",
-    "meaning": "Analog-to-Digital Converter の略で、アナログ信号をデジタル値に変換する装置。主にサンプリングと量子化の二つの過程によって変換を行う。"
-  },
-  {
-    "word": "Analog-to-Digital Converter",
-    "meaning": "アナログ信号をデジタル値に変換する装置。ADC とも呼ばれる。"
-  },
-  {
-    "word": "Correlation Coefficient",
-    "meaning": "二つの信号の形やパターンがどれくらい似ているかを評価する指標。数値の大きさそのものではなく、波形の類似性を評価する。"
-  },
-  {
-    "word": "Difference Between RMSE and Correlation Coefficient",
-    "meaning": "RMSE は数値的な誤差の大きさを評価し、相関係数は信号の形やパターンの類似性を評価する。信号の形が似ていても、振幅が異なれば RMSE は大きくなることがある。"
-  },
-  {
-    "word": "Digital",
-    "meaning": "連続的なアナログ信号を、コンピュータで保存・処理・送信できる離散的な数値データに変換したもの。"
-  },
-  {
-    "word": "Digitalization",
-    "meaning": "連続的に変化するアナログ信号を、電子機器で扱えるデジタルデータに変換する過程。脳から測定される神経信号も、コンピュータや BCI で使うためにはデジタル化が必要である。"
-  },
-  {
-    "word": "Fire",
-    "meaning": "ニューロンの膜電位がしきい値を超えて、活動電位を発生させること。"
-  },
-  {
-    "word": "IrOx",
-    "meaning": "この材料で被覆された電極では、表面に酸化イリジウム膜が形成される。そのため、耐久性の高い電極になる。"
-  },
-  {
-    "word": "Neural Firing",
-    "meaning": "ニューロンの膜電位がしきい値を超え、活動電位が発生する現象。"
-  },
-  {
-    "word": "PEDOT:PSS",
-    "meaning": "導電性ポリマーの一種。高い導電性を持ち、湿度などの要因に影響されにくく、安定した導電性を示す。"
-  },
-  {
-    "word": "Quantization",
-    "meaning": "連続的なアナログ値を、限られた数のデジタルレベルの中で最も近い値に割り当てる過程。過度な量子化は神経信号を歪ませる可能性がある。"
-  },
-  {
-    "word": "RMSE",
-    "meaning": "Root Mean Square Error の略。二つの信号の数値的な差の大きさを評価する指標である。RMSE が小さいほど、再構成の誤差が小さいことを示す。"
-  },
-  {
-    "word": "Root Mean Square Error",
-    "meaning": "二つの信号の絶対的な誤差の大きさを評価する指標。完全に一致する場合、RMSE は 0 になる。"
-  },
-  {
-    "word": "Sampling",
-    "meaning": "アナログ信号を一定の時間間隔で測定すること。ADC の変換過程の一つである。"
-  },
-  {
-    "word": "Spike",
-    "meaning": "ニューロンが発生する短い電気的パルス。スパイクに基づく通信では、神経波形全体ではなく、重要な発火イベントだけを送信する。"
-  },
-  {
-    "word": "Thermal noise voltage",
-    "meaning": "抵抗体内の自由電子が不規則な熱運動をすることで発生する雑音電圧。抵抗体内で生じる雑音電圧は、インピーダンスの平方根に比例する。"
-  }
+{
+"word": "ADC",
+"meaning": "ADC stands for Analog-to-Digital Converter. It is a device that changes an analog signal into digital data."
+},
+{
+"word": "Analog-to-Digital Converter",
+"meaning": "An Analog-to-Digital Converter is a device that changes an analog signal into digital values so that a computer can use it."
+},
+{
+"word": "Correlation Coefficient",
+"meaning": "A correlation coefficient shows how similar the shapes or patterns of two signals are. It does not mainly show the size of the error."
+},
+{
+"word": "Difference Between RMSE and Correlation Coefficient",
+"meaning": "RMSE shows how large the numerical error is. The correlation coefficient shows how similar the signal shapes are."
+},
+{
+"word": "Digital",
+"meaning": "Digital means data that is represented by separate numbers. Computers can store, process, and send digital data."
+},
+{
+"word": "Digitalization",
+"meaning": "Digitalization is the process of changing a continuous analog signal into digital data. This makes the signal usable by computers or BCI systems."
+},
+{
+"word": "Fire",
+"meaning": "Fire means that a neuron produces an action potential when its membrane potential goes over a threshold."
+},
+{
+"word": "IrOx",
+"meaning": "IrOx is iridium oxide. Electrodes coated with this material form an iridium oxide film on the surface, making the electrodes highly durable."
+},
+{
+"word": "Neural Firing",
+"meaning": "Neural firing is the event in which a neuron produces an action potential after its membrane potential passes a threshold."
+},
+{
+"word": "PEDOT:PSS",
+"meaning": "PEDOT:PSS is a conductive polymer. It has high conductivity and can keep stable conductivity even under conditions such as humidity."
+},
+{
+"word": "Quantization",
+"meaning": "Quantization is the process of changing a continuous value into one of a limited number of digital levels."
+},
+{
+"word": "RMSE",
+"meaning": "RMSE stands for Root Mean Square Error. It shows the size of the numerical difference between two signals. A smaller RMSE means better accuracy."
+},
+{
+"word": "Root Mean Square Error",
+"meaning": "Root Mean Square Error is a measure of the error between two signals. If the two signals are exactly the same, RMSE is 0."
+},
+{
+"word": "Sampling",
+"meaning": "Sampling means measuring an analog signal at regular time intervals."
+},
+{
+"word": "Spike",
+"meaning": "A spike is a short electrical pulse produced by a neuron. It represents an important firing event."
+},
+{
+"word": "Thermal noise voltage",
+"meaning": "Thermal noise voltage is noise caused by the random thermal motion of free electrons in a resistor. The noise voltage increases with the square root of the impedance."
+}
 ]

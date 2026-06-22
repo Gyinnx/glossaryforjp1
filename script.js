@@ -6,7 +6,7 @@ const wordList = document.getElementById("wordList");
 fetch("words.json")
   .then(response => {
     if (!response.ok) {
-      throw new Error("words.json を読み込めませんでした。");
+      throw new Error("CAN'T MATCH words.json");
     }
     return response.json();
   })
@@ -18,8 +18,8 @@ fetch("words.json")
     displayWords(words, "");
   })
   .catch(error => {
-    console.error("単語データの読み込みに失敗しました：", error);
-    wordList.textContent = "単語データを読み込めませんでした。words.json を確認してください。";
+    console.error("CAN'T READ DATA OF WORDS: ", error);
+    wordList.textContent = "CAN'T READ DATA OF WORDS. PLEASE CHECK words.json.";
   });
 
 searchInput.addEventListener("input", () => {
@@ -54,7 +54,7 @@ function displayWords(list, keyword) {
 
   if (list.length === 0) {
     const message = document.createElement("p");
-    message.textContent = "一致する単語が見つかりませんでした。";
+    message.textContent = "No matching words were found.";
     wordList.appendChild(message);
     return;
   }
@@ -70,7 +70,7 @@ function displayWords(list, keyword) {
 
     const meaning = document.createElement("div");
     meaning.className = "meaning";
-    meaning.textContent = "意味：" + item.meaning;
+    meaning.textContent = "MEANING: " + item.meaning;
 
     card.appendChild(word);
     card.appendChild(meaning);
