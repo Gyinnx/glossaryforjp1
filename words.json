@@ -70,5 +70,45 @@
 {
   "word": "EIS",
   "meaning": "EIS stands for Electrochemical Impedance Spectroscopy. It is a method used to measure the impedance of an electrochemical system over different frequencies."
+},
+  {
+  "word": "Acquisition",
+  "meaning": "Acquisition means the process of collecting or recording data. In neural engineering, it often means recording neural signals from the brain or nerves."
+},
+{
+  "word": "Attenuation",
+  "meaning": "Attenuation means a decrease in signal strength. In neural signals, attenuation can happen when the signal becomes weaker during recording or transmission."
+},
+{
+  "word": "Contamination",
+  "meaning": "Contamination means the unwanted presence of foreign material or substances. In neural recording, contamination can reduce signal quality or affect the electrode surface."
+},
+{
+  "word": "Degradation",
+  "meaning": "Degradation means a decrease in quality or performance over time. For electrodes, it can mean that the electrode becomes less stable or less effective after use."
+},
+{
+  "word": "Electrode",
+  "meaning": "An electrode is a device used to record electrical signals or deliver electrical stimulation. In neural systems, electrodes can record signals from neurons or stimulate neural tissue."
+},
+{
+  "word": "Execution latency",
+  "meaning": "Execution latency means the delay between giving a command and completing the action. In BCI systems, it can mean the delay between detecting a neural signal and producing the output command."
+},
+{
+  "word": "Iridium-oxide",
+  "meaning": "Iridium-oxide is a material used to coat electrodes. It can improve electrode durability and is useful for neural recording and stimulation."
+},
+{
+  "word": "Misinterpretation",
+  "meaning": "Misinterpretation means understanding or classifying something incorrectly. In BCI systems, it can mean that a neural signal is decoded as the wrong command."
+},
+{
+  "word": "Noise",
+  "meaning": "Noise is unwanted signal activity that interferes with the target neural signal. It can come from the body, the recording device, or the environment."
+},
+{
+  "word": "Tissue",
+  "meaning": "Tissue is a group of similar cells that work together. In neural engineering, it often refers to brain or nerve tissue around an electrode."
 }
 ]
