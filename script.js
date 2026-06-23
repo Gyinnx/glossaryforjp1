@@ -6,48 +6,63 @@ const wordList = document.getElementById("wordList");
 fetch("words.json")
   .then(response => {
     if (!response.ok) {
-      throw new Error("CAN'T MATCH words.json");
+      throw new Error("words.json could not be loaded.");
     }
     return response.json();
   })
   .then(data => {
-    words = data.sort((a, b) =>
-      a.word.localeCompare(b.word, "en", { sensitivity: "base" })
-    );
+    // 读取后自动按字母顺序排列
+    words = sortWords(data);
 
+    // 页面刚打开时，显示排序后的全部单词
     displayWords(words, "");
   })
   .catch(error => {
-    console.error("CAN'T READ DATA OF WORDS: ", error);
-    wordList.textContent = "CAN'T READ DATA OF WORDS. PLEASE CHECK words.json.";
+    console.error("Failed to load word data:", error);
+    wordList.textContent = "Word data could not be loaded. Please check words.json.";
   });
 
 searchInput.addEventListener("input", () => {
   const keyword = searchInput.value.trim().toLowerCase();
 
-  let filteredWords;
-
   if (keyword === "") {
-    filteredWords = [...words].sort((a, b) =>
-      a.word.localeCompare(b.word, "en", { sensitivity: "base" })
-    );
-  } else {
-    filteredWords = words
-      .filter(item => item.word.toLowerCase().includes(keyword))
-      .sort((a, b) => {
-        const indexA = a.word.toLowerCase().indexOf(keyword);
-        const indexB = b.word.toLowerCase().indexOf(keyword);
-
-        if (indexA !== indexB) {
-          return indexA - indexB;
-        }
-
-        return a.word.localeCompare(b.word, "en", { sensitivity: "base" });
-      });
+    displayWords(sortWords(words), "");
+    return;
   }
+
+  const filteredWords = words
+    // 只匹配单词本身，不匹配 meaning
+    .filter(item => item.word.toLowerCase().includes(keyword))
+    .sort((a, b) => {
+      const wordA = a.word.toLowerCase();
+      const wordB = b.word.toLowerCase();
+
+      const indexA = wordA.indexOf(keyword);
+      const indexB = wordB.indexOf(keyword);
+
+      // 匹配位置越靠前，显示越靠上
+      if (indexA !== indexB) {
+        return indexA - indexB;
+      }
+
+      // 匹配位置相同时，再按字母顺序排列
+      return a.word.localeCompare(b.word, "en", {
+        sensitivity: "base",
+        numeric: true
+      });
+    });
 
   displayWords(filteredWords, keyword);
 });
+
+function sortWords(list) {
+  return [...list].sort((a, b) =>
+    a.word.localeCompare(b.word, "en", {
+      sensitivity: "base",
+      numeric: true
+    })
+  );
+}
 
 function displayWords(list, keyword) {
   wordList.innerHTML = "";
@@ -70,7 +85,7 @@ function displayWords(list, keyword) {
 
     const meaning = document.createElement("div");
     meaning.className = "meaning";
-    meaning.textContent = "MEANING: " + item.meaning;
+    meaning.textContent = "Meaning: " + item.meaning;
 
     card.appendChild(word);
     card.appendChild(meaning);
@@ -93,13 +108,18 @@ function addHighlightedWord(element, wordText, keyword) {
 
   while (matchIndex !== -1) {
     const beforeText = wordText.slice(currentIndex, matchIndex);
+
     if (beforeText) {
       element.appendChild(document.createTextNode(beforeText));
     }
 
     const highlightSpan = document.createElement("span");
     highlightSpan.className = "highlight";
-    highlightSpan.textContent = wordText.slice(matchIndex, matchIndex + keyword.length);
+    highlightSpan.textContent = wordText.slice(
+      matchIndex,
+      matchIndex + keyword.length
+    );
+
     element.appendChild(highlightSpan);
 
     currentIndex = matchIndex + keyword.length;
@@ -107,6 +127,7 @@ function addHighlightedWord(element, wordText, keyword) {
   }
 
   const afterText = wordText.slice(currentIndex);
+
   if (afterText) {
     element.appendChild(document.createTextNode(afterText));
   }
