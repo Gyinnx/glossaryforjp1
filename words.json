@@ -62,5 +62,13 @@
 {
 "word": "Thermal noise voltage",
 "meaning": "Thermal noise voltage is noise caused by the random thermal motion of free electrons in a resistor. The noise voltage increases with the square root of the impedance."
+},
+  {
+  "word": "Impedance",
+  "meaning": "Impedance is the resistance of a circuit or material to an alternating current. It includes both resistance and reactance."
+},
+{
+  "word": "EIS",
+  "meaning": "EIS stands for Electrochemical Impedance Spectroscopy. It is a method used to measure the impedance of an electrochemical system over different frequencies."
 }
 ]
